@@ -17,4 +17,9 @@ class Library:
 
     def return_book(self, book_id):
         self.books[book_id]["status"] = "Available"
-    
+    # ===== Sprint-3 =====
+    def generate_report(self):
+        report = "Book ID | Title | Author | Status\n"
+        for book_id, info in self.books.items():
+            report += f"{book_id} | {info['title']} | {info['author']} | {info['status']}\n"
+        return report
